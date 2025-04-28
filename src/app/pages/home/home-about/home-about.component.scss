@@ -1,0 +1,131 @@
+.about{
+    background-color: #75befa9f !important;
+}
+.image-container{
+    margin-right: 30px;
+}
+
+.text-container{
+    margin-top: 6rem !important;
+}
+
+.text-container span{
+    color: #2196F3;
+    font-size: 20px !important;
+    border-bottom: 2px solid #ccc;
+}
+
+.text-container p{
+    color: #5c5a5a !important;
+    font-size: 18px !important;
+}
+
+ul li p{
+    color: black !important;
+    font-weight: bold;
+    font-size: 15px !important;
+}
+
+
+.contact-btn {
+    background: linear-gradient(90deg, #2196F3, #64B5F6);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(90deg, #1976D2, #90CAF9);
+    }
+
+    &:active {
+        background: linear-gradient(90deg, #0D47A1, #2196F3);
+    }
+}
+
+
+@media (max-width: 992px){
+    .text-container{
+        text-align: center;
+        margin: 0 !important;
+    }
+    .hero .container{
+        padding: 5rem 0 !important;
+    }
+}
+
+.about-container {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    i {
+      color: #4CAF50;
+      font-size: 1.2rem;
+    }
+
+    span {
+      font-size: 1rem;
+      color: #333;
+    }
+  }
+}
+
+.about-image {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}

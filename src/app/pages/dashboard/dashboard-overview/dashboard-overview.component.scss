@@ -1,0 +1,28 @@
+.col-lg-3 div{
+    background-color: #f4f6ff !important;
+}
+
+h4{
+    text-transform: capitalize;
+}
+
+.col-lg-3 i{
+    width:45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #eaedff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #284cff;
+}
+
+.col-lg-3 div h4{
+    color: #2f7df3 !important;
+    flex-grow: 1;
+}
+
+.col-lg-3 span{
+    color: #6b7280;
+    font-size: 30px !important;
+}

@@ -1,0 +1,91 @@
+<section class="recent-appointments">
+    <p-toast></p-toast>
+    <div class="container">
+        <h3>Recent Appointments</h3>
+        
+        <div *ngIf="isLoading" class="loading-spinner">
+            Loading appointments...
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+
+        <div *ngIf="!isLoading && !errorMessage && appointments.length === 0" class="no-appointments">
+            No appointments found.
+        </div>
+
+        <div class="table-responsive" *ngIf="!isLoading && !errorMessage && appointments.length > 0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Doctor</th>
+                        <th>Department</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appointment of appointments">
+                        <td>{{ appointment.user_name }}</td>
+                        <td>{{ appointment.doctor_name }}</td>
+                        <td>{{ appointment.department_name }}</td>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ appointment.time }}</td>
+                        <td>
+                            <span class="status-badge" [ngClass]="appointment.status || 'pending'">
+                                {{ appointment.status || 'pending' }}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="d-flex gap-2" *ngIf="appointment.status === 'pending'">
+                                <button class="btn btn-success btn-sm" (click)="approveAppointment(appointment)" title="Approve Appointment">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" (click)="rejectAppointment(appointment)" title="Reject Appointment">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="#" class="btn view-appointment">View All Appointments</a>
+    </div>
+</section>
+
+
+<section class="quic-sections py-5">
+    <div class="container">
+        <div class="row pt-4 g-3">
+            <div class="col-lg-4">
+                <div class="d-flex flex-column bg-light p-4 rounded-2 h-100">
+                    <i class="fa-solid fa-suitcase-medical mb-3"></i>
+                    <h3>Available Doctors</h3>
+                    <p>View Doctors Currently Available For Appointments</p>
+                    <a href="#" class="btn mt-3">View Doctors</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex flex-column bg-light p-4 rounded-2 h-100">
+                    <i class="fa-regular fa-folder mb-3"></i>
+                    <h3>Patient Records</h3>
+                    <p>Access And Manage Patient Medical Records</p>
+                    <a href="#" class="btn mt-3">Access Records</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex flex-column bg-light p-4 rounded-2 h-100">
+                    <i class="fa-solid fa-circle-plus mb-3"></i>
+                    <h3>Schedule Appointment</h3>
+                    <p>Create A New Appointment For A Patient</p>
+                    <a href="#" class="btn mt-3">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<section class="signup-page">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+        <img src="logo.png" alt="Logo" width="200">
+        <div class="signup-container bg-light p-5 rounded-2">
+            <h1 class="text-center fw-bold mb-4">Sign Up</h1>
+            <form class="d-flex flex-column" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+                <label for="name" class="mb-2">
+                    Name:
+                </label>
+                <input type="text" name="name" id="name" placeholder="Your Name" class="mb-4" [(ngModel)]="name" required>
+                
+                <label for="email" class="mb-2">
+                    Email:
+                </label>
+                <input type="email" name="email" id="email" placeholder="user@info.com" class="mb-4" [(ngModel)]="email" required>
+                
+                <label for="password" class="mb-2">
+                    Password:
+                </label>
+                <input type="password" name="password" id="password" [(ngModel)]="password" required>
+                
+                <button class="btn sign-btn mt-4" type="submit" [disabled]="!signupForm.form.valid">Sign Up</button>
+                
+                <div *ngIf="showSuccessAlert" class="alert alert-success mt-4">
+                    {{ errorMessage }}
+                </div>
+                
+                <div *ngIf="showDangerAlert" class="alert alert-danger mt-4">
+                    {{ errorMessage }}
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

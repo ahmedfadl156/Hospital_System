@@ -1,0 +1,93 @@
+<div class="container py-5">
+    <h2>Doctors Managment</h2>
+    <form class="pt-4">
+        <label class="fw-bold">
+            Search Doctors
+        </label>
+        <div class="d-flex align-items-center position-relative">
+            <input type="text" placeholder="Seacrh For Doctor By Name" class="w-100 doctor-input">
+            <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDoctorModal">Add New Doctor</button>
+    </form>
+</div>
+
+<div class="container py-4">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-briefcase-medical p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Total</h5>
+                <p class="fw-bold">{{doctors.length}}</p>
+                <span>Active Doctors</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-clock p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Average</h5>
+                <p class="fw-bold">28</p>
+                <span>Weekly Hours</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-user-group p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Average</h5>
+                <p class="fw-bold">42</p>
+                <span>Patients Per Doctor</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-regular fa-star p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Average</h5>
+                <p class="fw-bold">4.8</p>
+                <span>Patient Satisfaction</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addDoctorModal" tabindex="-1" aria-labelledby="addDoctorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDoctorModalLabel">Add New Doctor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="AddDoctor()" #doctorForm="ngForm">
+                    <div class="mb-3">
+                        <label for="doctorName" class="form-label">Doctor Name</label>
+                        <input type="text" class="form-control" id="doctorName" [(ngModel)]="doctor.name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="doctorEmail" class="form-label">Doctor Email</label>
+                        <input type="text" class="form-control" id="doctorEmail" [(ngModel)]="doctor.email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="specialization" class="form-label">Specialization</label>
+                        <select class="form-select" id="specialization" [(ngModel)]="doctor.specialization" name="specialization" required>
+                            <option value="" disabled selected>Select Specialization</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Surgery">Surgery</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Years of Experience</label>
+                        <input type="number" class="form-control" id="experience" [(ngModel)]="doctor.experience" name="experience" min="0" max="50" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!doctorForm.form.valid">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container py-5">
+    <div class="card">
+        <div class="card-header">
+            <h2>Departments</h2>
+            <button pButton pRipple label="New Department" icon="pi pi-plus" class="p-button-success" (click)="openNew()" title="Add new department"></button>
+        </div>
+
+        <p-table [value]="departments" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]"
+            styleClass="p-datatable-gridlines" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th>ID</th>
+                    <th>Department Name</th>
+                    <th>Staff Number</th>
+                    <th>Beds Number</th>
+                    <th>Equipments</th>
+                    <th>Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-department>
+                <tr>
+                    <td>
+                        <p-tableCheckbox [value]="department"></p-tableCheckbox>
+                    </td>
+                    <td>{{department.id}}</td>
+                    <td>{{department.dep_name}}</td>
+                    <td>{{department.staff_num}}</td>
+                    <td>{{department.beds_num}}</td>
+                    <td>{{department.equipments}}</td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning mx-2" (click)="editDepartment(department)" title="Edit department"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="deleteDepartment(department.id)" title="Delete department"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<p-dialog [(visible)]="departmentDialog" [style]="{width: '450px'}" header="Department Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field d-grid gap-2 mb-4">
+            <label for="dep_name" class="fw-bold">Department Name</label>
+            <input id="dep_name" type="text" pInputText [(ngModel)]="department.dep_name" required autofocus />
+        </div>
+        <div class="p-field d-grid gap-2 mb-4">
+            <label for="staff_num" class="fw-bold">Staff Number</label>
+            <input id="staff_num" type="number" pInputText [(ngModel)]="department.staff_num" required />
+        </div>
+        <div class="p-field d-grid gap-2 mb-4">
+            <label for="beds_num" class="fw-bold">Beds Number</label>
+            <input id="beds_num" type="number" pInputText [(ngModel)]="department.beds_num" required />
+        </div>
+        <div class="p-field d-grid gap-2 mb-4">
+            <label for="equipments" class="fw-bold">Equipments</label>
+            <input id="equipments" type="number" pInputText [(ngModel)]="department.equipments" required />
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple icon="pi pi-times" label="Cancel" class="p-button-text" (click)="hideDialog()" title="Cancel"></button>
+        <button pButton pRipple icon="pi pi-check" label="Save" class="p-button-text" (click)="saveDepartment()" title="Save"></button>
+    </ng-template>
+</p-dialog>

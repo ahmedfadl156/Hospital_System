@@ -1,0 +1,69 @@
+.login-btn{
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    color: #2196F3;
+    padding: 10px 30px;
+    border-radius: 10000px;
+    font-size: 18px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+
+    &:hover{
+        color: #fff;
+        background-color: #2196F3;
+    }
+}
+
+.book-btn{
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10000px;
+    font-size: 18px;
+    background-color: #2196F3;
+    transition: all 0.2s ease;
+
+    &:hover{
+        color: #2196F3;
+        background-color: #fff;
+    }
+}
+
+.welcome-message {
+    font-size: 14px;
+    color: #fff;
+    background-color: #2196F3;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.dropdown-toggle{
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10000px;
+    font-size: 18px;
+    background-color: #2196F3;
+    transition: all 0.2s ease;
+
+    &:hover{
+        color: #2196F3;
+        background-color: #fff;
+    }
+}
+
+.dropdown-menu .book-btn{
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+}

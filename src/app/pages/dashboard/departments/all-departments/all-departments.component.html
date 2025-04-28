@@ -1,0 +1,87 @@
+<div class="container py-5">
+    <h2>Departments Managment</h2>
+    <form class="pt-4">
+        <label class="fw-bold">
+            Search Department
+        </label>
+        <div class="d-flex align-items-center position-relative">
+            <input type="text" placeholder="Seacrh For Department By Name" class="w-100 department-input">
+            <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDepartmentModal">Add New Department</button>
+    </form>
+</div>
+
+<div class="container py-4">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-regular fa-hospital p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Total</h5>
+                <p class="fw-bold">{{departments.length}}</p>
+                <span>Active Departments</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-user-group p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Staff</h5>
+                <p class="fw-bold">{{ getTotalStaff() }}</p>
+                <span>Total Staff Members</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-briefcase-medical p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Equipments</h5>
+                <p class="fw-bold">{{ getTotalequipments() }}</p>
+                <span>Medical Equipments</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-bed p-2 rounded-circle fs-4 mb-3"></i>
+                <h5 class="fw-bold">Capacity</h5>
+                <p class="fw-bold">{{ getTotalBeds() }}</p>
+                <span>Available Beds</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addDepartmentModal" tabindex="-1" aria-labelledby="addDepartmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addDepartmentModalLabel">Add New Department</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="doctorName" class="form-label">Department Name</label>
+                        <input type="text" class="form-control" id="doctorName"  name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Staff Number</label>
+                        <input type="number" class="form-control" id="experience" name="experience" min="0" max="50" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Equipments Number</label>
+                        <input type="number" class="form-control" id="experience" name="experience" min="0" max="50" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Beds Number</label>
+                        <input type="number" class="form-control" id="experience" name="experience" min="0" max="50" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

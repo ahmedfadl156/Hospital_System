@@ -1,0 +1,37 @@
+<section class="dashboard-overview py-5">
+    <div class="text-container container">
+        <h3>Dashboard Overview</h3>
+    </div>
+    <div class="container">
+        <div class="row py-4 g-4">
+            <div class="col-lg-3">
+                <div class="d-flex flex-column p-3 bg-light rounded-2 h-100">
+                    <i class="fa-solid fa-user-group mb-3"></i>
+                    <h4>Total Patients</h4>
+                    <span>{{users.length}}</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex flex-column p-3 bg-light rounded-2 h-100">
+                    <i class="fa-solid fa-calendar mb-3"></i>
+                    <h4>Today's Appointment</h4>
+                    <span>{{appointments.length}}</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex flex-column p-3 bg-light rounded-2 h-100">
+                    <i class="fa-solid fa-suitcase-medical mb-3"></i>
+                    <h4>Available Doctors</h4>
+                    <span>{{doctors.length}}</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex flex-column p-3 bg-light rounded-2 h-100">
+                    <i class="fa-regular fa-hospital mb-3"></i>
+                    <h4>Departments</h4>
+                    <span>{{departments.length}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

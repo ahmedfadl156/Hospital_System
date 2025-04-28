@@ -1,0 +1,38 @@
+.doctor-input{
+    background-color:transparent;
+    color: black;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+i{
+    right: 20px;
+}
+
+.stat{
+    background-color: rgba(175, 175, 235, 0.277) !important;
+    border-radius: 15px !important;
+    padding: 20px 10px;
+}
+
+.stat h5{
+    color: black;
+    font-size: 30px;
+}
+
+.stat p{
+    font-size: 25px !important;
+}
+
+.stat span{
+    color: #7c7c7c;
+    font-size: 20px !important;
+}
+
+.row i{
+    background-color: rgba(139, 139, 241, 0.447) !important;
+}

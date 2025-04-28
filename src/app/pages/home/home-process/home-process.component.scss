@@ -1,0 +1,139 @@
+.text-container p{
+    color: #1976D2;
+    font-size: 20px !important;
+}
+
+.col-lg-4 span{
+    font-size: 100px !important;
+    font-weight: 900;
+    color: #1976D2;
+}
+
+.book-appointment .container{
+    background-color: #1976D2 !important;
+    border-bottom-right-radius: 100px;
+}
+
+.book-appointment .image-container img{
+    width: 1000px !important;
+}
+
+.first-row , .second-row , .third-row{
+    margin-right: 30px;
+}
+
+input , select{
+    border: none;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 18px ;
+}
+
+:host ::ng-deep p-datepicker{
+    width: 100%;
+
+}
+
+:host ::ng-deep p-datepicker::placeholder{
+    color: #fff !important;
+}
+
+:host ::ng-deep .p-datepicker .p-inputtext,
+:host ::ng-deep p-calendar .p-inputtext {
+    border: 1px solid #fff !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 15px 10px !important;
+    border-radius: 10px !important;
+    font-size: 18px !important;
+    outline: none !important;
+}
+
+
+:host ::ng-deep .p-datepicker-panel {
+    background-color: #2196F3 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    border-radius: 10px !important;
+}
+
+:host ::ng-deep .p-datepicker-header{
+    background-color: #2196F3;
+}
+
+:host ::ng-deep .p-datepicker-panel .p-datepicker-calendar td {
+    color: #fff !important;
+}
+
+
+:host ::ng-deep .p-calendar,
+:host ::ng-deep p-calendar .p-inputtext,
+:host ::ng-deep p-floatlabel {
+    background-color: transparent !important;
+}
+
+
+select{
+    background-color: #1976D2 !important;
+}
+
+input::placeholder{
+    color: #fff !important;
+}
+
+
+.email-input , .department{
+    width: 95% !important;
+}
+
+.appointment-btn{
+    background: linear-gradient(90deg, #2196F3, #64B5F6);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 95%;
+
+    &:hover {
+        background: linear-gradient(90deg, #1976D2, #90CAF9);
+    }
+
+    &:active {
+        background: linear-gradient(90deg, #0D47A1, #2196F3);
+    }
+}
+
+.alert-success , .alert-danger{
+    width: 95%;
+}
+
+.elsalos .col-lg-4 div:hover{
+    transform: scale(1.05);
+    background-color: #1976D2 !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.elsalos .col-lg-4 div:hover span{
+    color: #fff;
+}
+
+:root .swal2-container p-rating .p-rating {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+@media(max-width: 992px){
+    .book-appointment .container{
+        border-bottom-right-radius: 0;
+    }
+}

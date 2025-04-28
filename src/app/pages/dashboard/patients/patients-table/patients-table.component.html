@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Patients Table</h3>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(user of users; track user){
+                <tr>
+                  <th scope="row">{{user.id}}</th>
+                  <th>{{user.name}}</th>
+                  <th>{{user.email}}</th>
+                  <th>{{user.password}}</th>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

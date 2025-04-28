@@ -1,0 +1,67 @@
+.testimonial{
+    background-color: #75befa9f !important;
+}
+
+.testimonial .text-container h5{
+    color: #2196F3 !important;
+    font-size: 30px !important;
+}
+
+.patient-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.patient-info img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    margin-top: 18px;
+}
+
+// .carousel-item div{
+//     background-color: #44a4f2 !important;
+// }
+
+.carousel-control-prev-icon{
+    color: red;
+}
+
+.quote-mark{
+    left: -4%;
+    z-index: 100000;
+    top: 15%;
+}
+
+.quote-mark img{
+    width: 80px;
+}
+
+.carousel-control-prev-icon{
+    background-color: #0088f7 !important;
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    position: absolute !important;
+    left: 5px;
+}
+
+.carousel-control-next-icon{
+    background-color: #0088f7 !important;
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    position: absolute !important;
+    right: 5px;
+}
+
+.ar{
+    direction: rtl;
+}
+
+@media(max-width: 992px){
+    .quote-mark{
+        display: none;
+    }
+}

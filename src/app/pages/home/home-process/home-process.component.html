@@ -1,0 +1,87 @@
+<section class="work-process py-5">
+    <div class="text-container text-center">
+        <p>Working Process</p>
+        <h1 class="fw-bold display-5">How We Works?</h1>
+    </div>
+    <div class="container elsalos">
+        <div class="row g-3 py-5">
+            <div class="col-lg-4">
+                <div
+                 class="h-100 bg-light rounded-2 p-4">
+                    <span class="mb-4 d-block">1</span>
+                    <h2>Registration</h2>
+                    <p>Patient Can Do Registration From Here With Basic Information.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div
+                class="h-100 bg-light rounded-2 p-4">
+                    <span class="mb-4 d-block">2</span>
+                    <h2>Make Appointment</h2>
+                    <p>Patient Can Book an appointment with doctor for, landing page or from his login panel.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div
+                 class="h-100 bg-light rounded-2 p-4">
+                    <span class="mb-4 d-block">3</span>
+                    <h2>Take Treatment</h2>
+                    <p>Doctors can interact with patients and do related treatment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="book-appointment py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="appointment.png" alt="Appointment Image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="text-center text-white mt-3">Book An Appointment</h1>
+                <form class="mt-5">
+                    <div class="first-row d-flex gap-2">
+                        <input type="text" placeholder="First Name" [(ngModel)]="firstName" name="firstName">
+                        <input type="text" placeholder="Last Name" [(ngModel)]="lastName" name="lastName">
+                    </div>
+                    <input type="email" placeholder="Enter Email" class="mt-4 email-input" [(ngModel)]="email" name="email">
+                    <div class="second-row d-flex gap-2 mt-4">
+                        <label for="doctorSelect" class="visually-hidden">Select Doctor</label>
+                        <select id="doctorSelect" [(ngModel)]="selectedDoctor" name="doctor" class="form-select" aria-label="Select Doctor">
+                            <option [ngValue]="null" disabled selected>Select Doctor</option>
+                            <option *ngFor="let doctor of doctors" [ngValue]="doctor">
+                                Dr. {{ doctor.name }}
+                            </option>
+                        </select>
+                        <p-datepicker [(ngModel)]="date" name="date" [showButtonBar]="true" placeholder="select Date"/>
+                    </div>
+                    <div class="third-row d-flex gap-2 mt-4">
+                        <label for="departmentSelect" class="visually-hidden">Select Department</label>
+                        <select id="departmentSelect" [(ngModel)]="department" name="department" class="department" aria-label="Select Department">
+                            <option value="" disabled selected>Select a Department</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Surgery">Surgery</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Dermatology">Dermatology</option>
+                        </select>
+                        <label for="time" class="visually-hidden">Select Time</label>
+                        <input type="time"  [(ngModel)]="time" name="time" id="time" required>
+                    </div>
+                    <button type="button" class="text-center btn appointment-btn mt-4" (click)="submitAppointment($event)">Appointment Now</button>
+                    <div class="alert alert-danger mt-4" role="alert" *ngIf="showDangerAlert">
+                        There Is An Error While Booking Your Appointment Check Inputs And Try Again!
+                      </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</section>

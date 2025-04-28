@@ -1,0 +1,22 @@
+.footer{
+    background-color: #379cefa7 !important;
+}
+
+.copy-right{
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+@media(max-width: 992px){
+    .copy-right p{
+        font-size: 16px !important;
+    }
+    span{
+        font-size: 16px !important;
+    }
+}

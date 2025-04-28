@@ -1,0 +1,44 @@
+.signup-page{
+    background: linear-gradient(90deg, #2196F3, #64B5F6) !important;
+    height: 100vh;
+}
+
+.signup-page img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+}
+
+.container{
+    height: 100vh;
+}
+
+.image{
+    margin-top: 7rem !important;
+}
+
+.signup-container{
+    background:  #fff !important;
+    width: 450px !important;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: #ebe8e8;
+    color: #000;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.sign-btn{
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #2196F3, #64B5F6) !important;
+    color: #fff;
+    padding: 10px 5px;
+}

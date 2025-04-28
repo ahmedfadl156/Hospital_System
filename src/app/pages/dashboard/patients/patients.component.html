@@ -1,0 +1,18 @@
+<app-navbar />
+<section class="patients p-5">
+    <div class="container">
+        <h1>Patients Managment</h1>
+        <form class="pt-4">
+            <label class="fw-bold">
+                Search Patient
+            </label>
+            <div class="d-flex align-items-center position-relative">
+                <input type="text" placeholder="Seacrh For Patient By Name" class="w-100 patient-input">
+                <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDoctorModal">Add New Patient</button>
+        </form>
+    </div>
+</section>
+
+<app-patients-table></app-patients-table>

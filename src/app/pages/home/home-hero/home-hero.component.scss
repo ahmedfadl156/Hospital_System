@@ -1,0 +1,45 @@
+.hero .container{
+    padding: 10rem 0 !important;
+}
+
+.hero .row .col-lg-6 h5{
+    color: #64B5F6 !important;
+    font-size: 30px !important;
+}
+
+.image-container img{
+    width: 650px;
+}
+
+.text-container{
+    margin-top: 70px;
+}
+
+.signup-btn {
+    background: linear-gradient(90deg, #2196F3, #64B5F6);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(90deg, #1976D2, #90CAF9);
+    }
+
+    &:active {
+        background: linear-gradient(90deg, #0D47A1, #2196F3);
+    }
+}
+
+@media (max-width: 992px){
+    .text-container{
+        text-align: center;
+        margin: 0 !important;
+    }
+    .hero .container{
+        padding: 5rem 0 !important;
+    }
+}

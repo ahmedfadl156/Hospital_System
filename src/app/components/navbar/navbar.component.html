@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-xxl bg-white shadow py-3 px-5">
+<a href="#" class="navbar-brand">
+    <h5>university hospital</h5>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarDropdown">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="navbar-collapse collapse" id="NavbarDropdown">
+    <ul class="navbar-nav gap-3 ms-5">
+        <li class="nav-item d-flex align-items-center gap-1">
+            <i class="fa-solid fa-table-columns"></i>
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link fw-bold fs-6">dashboard</a>        
+        </li>
+        <li class="nav-item d-flex align-items-center gap-2">
+            <i class="fa-solid fa-user-group"></i>
+            <a routerLink="/patients" routerLinkActive="active" class="nav-link fw-bold fs-6">patients</a>        
+        </li>
+        <li class="nav-item d-flex align-items-center gap-2">
+            <i class="fa-solid fa-suitcase-medical"></i>
+            <a routerLink="/doctors" routerLinkActive="active" class="nav-link fw-bold fs-6">doctors</a>        
+        </li>
+        <li class="nav-item d-flex align-items-center gap-2">
+            <i class="fa-solid fa-calendar"></i>
+            <a routerLink="/appointments" routerLinkActive="active" class="nav-link fw-bold fs-6">appointments</a>        
+        </li>
+        <li class="nav-item d-flex align-items-center gap-2">
+            <i class="fa-regular fa-hospital"></i>
+            <a routerLink="/departments" routerLinkActive="active" class="nav-link fw-bold fs-6">departments</a>        
+        </li>
+    </ul>
+    <ul class="navbar-nav ms-auto gap-2">
+        <a href="#" class="btn reports-btn">reports</a>
+        <a href="#" class="btn appointment-btn">new appointment</a>
+    </ul>
+</div>
+</nav>
