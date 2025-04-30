@@ -9,7 +9,6 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-// Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -26,7 +25,6 @@ try {
     $id = $data['id'];
     $status = $data['status'];
 
-    // First get the appointment details including email
     $stmt = $pdo->prepare('SELECT * FROM appointments WHERE id = :id');
     $stmt->execute(['id' => $id]);
     $appointment = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -35,34 +33,28 @@ try {
         throw new Exception('No appointment found with the given ID');
     }
 
-    // Update the status
     $stmt = $pdo->prepare('UPDATE appointments SET status = :status WHERE id = :id');
     $stmt->execute(['status' => $status, 'id' => $id]);
 
     if ($stmt->rowCount() > 0) {
-        // Send email notification
         $mail = new PHPMailer(true);
 
-        // Server settings
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'hospital.system@gmail.com'; // Replace with your Gmail
-        $mail->Password = 'your-app-password'; // Replace with your Gmail App Password
+        $mail->Username = 'af38765220@gmail.com'; 
+        $mail->Password = 'rhei plvp ixag mjhd'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Enable debugging
         $mail->SMTPDebug = 2;
         $mail->Debugoutput = function($str, $level) {
             error_log("SMTP Debug: $str");
         };
 
-        // Recipients
-        $mail->setFrom('hospital.system@gmail.com', 'Hospital Management System');
+        $mail->setFrom('af38765220@gmail.com', 'Hospital Management System');
         $mail->addAddress($appointment['email']);
 
-        // Content
         $mail->isHTML(true);
         $mail->Subject = 'Appointment Status Update';
         $mail->Body = getEmailMessage($appointment, $status);
@@ -81,15 +73,15 @@ try {
 
 function getEmailMessage($appointment, $status) {
     $message = '<html><body>';
-    $message .= '<h2>Appointment Status Update</h2>';
-    $message .= '<p>Dear ' . htmlspecialchars($appointment['user_name']) . ',</p>';
+    $message .= '<h2>تحديث حالة الحجز</h2>';
+    $message .= '<p>عزيزى ' . htmlspecialchars($appointment['user_name']) . ',</p>';
     
     if ($status === 'accepted') {
-        $message .= '<p>We are pleased to inform you that your appointment has been accepted.</p>';
-        $message .= '<p>Appointment Details:</p>';
+        $message .= '<p>نود اعلامك أنه بعد مراجعة موعدك فقد تم قبول موعد بنجاح ونحن فى انتظارك❤️❤️</p>';
+        $message .= '<p>تفاصيل الحجز:</p>';
     } else {
-        $message .= '<p>We regret to inform you that your appointment has been rejected.</p>';
-        $message .= '<p>Appointment Details:</p>';
+        $message .= '<p>نود اعلامك أنه بعد مراجعة موعدك فللأسف قد تم رفض موعدك عشان انت اختارت معاد مش كويس ومش مناسب فاحجز تانى واختار معاد حلو ومناسب وهقبلك ان شاء الله </p>';
+        $message .= '<p>تفاصيل الحجز عشان تغيرها وانت بتحجز المرة الجاية:</p>';
     }
     
     $message .= '<ul>';
@@ -100,14 +92,14 @@ function getEmailMessage($appointment, $status) {
     $message .= '</ul>';
     
     if ($status === 'accepted') {
-        $message .= '<p>Please arrive 15 minutes before your scheduled time.</p>';
+        $message .= '<p>من فضلك تكون فى المستشفى قبل معادك ب 15 دقيقة على الأقل والا هندخل حد تانى وهنديك حجز فى معاد تانى</p>';
     } else {
-        $message .= '<p>Please feel free to book another appointment at your convenience.</p>';
+        $message .= '<p>ممكن ان انت تحجز فى وقت تانى زى ما قولتلك ارجع للموقع واحجز من أول وجديد</p>';
     }
     
-    $message .= '<p>Best regards,<br>Hospital Management System</p>';
+    $message .= '<p>Best regards,<br>Ahmed Fadl</p>';
     $message .= '</body></html>';
     
     return $message;
 }
-?> 
+?>
