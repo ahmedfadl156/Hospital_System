@@ -33,8 +33,8 @@
                         <td>{{ appointment.user_name }}</td>
                         <td>{{ appointment.doctor_name }}</td>
                         <td>{{ appointment.department_name }}</td>
-                        <td>{{ appointment.date }}</td>
-                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.date | date: "fullDate"}}</td>
+                        <td>{{ appointment.time}}</td>
                         <td>
                             <span class="status-badge" [ngClass]="appointment.status || 'pending'">
                                 {{ appointment.status || 'pending' }}

@@ -13,6 +13,7 @@ interface Appointment {
   date: string;
   time: string;
   status?: string;
+  email: string;
 }
 
 @Component({
@@ -119,9 +120,11 @@ export class RecentAppointmentsComponent implements OnInit {
                     this.messageService.add({
                         severity: 'success',
                         summary: 'Success',
-                        detail: 'Appointment approved successfully',
+                        detail: 'Appointment approved successfully and email notification sent',
                         life: 3000
                     });
+                    // Reload appointments to show updated status
+                    this.loadAppointments();
                 } else {
                     console.log('Adding error message:', response.message);
                     this.messageService.add({
@@ -138,7 +141,7 @@ export class RecentAppointmentsComponent implements OnInit {
                 this.messageService.add({
                     severity: 'error',
                     summary: 'Error',
-                    detail: 'Failed to approve appointment',
+                    detail: 'Failed to approve appointment. Please try again later.',
                     life: 3000
                 });
             }
@@ -162,9 +165,11 @@ export class RecentAppointmentsComponent implements OnInit {
                     this.messageService.add({
                         severity: 'success',
                         summary: 'Success',
-                        detail: 'Appointment rejected successfully',
+                        detail: 'Appointment rejected successfully and email notification sent',
                         life: 3000
                     });
+                    // Reload appointments to show updated status
+                    this.loadAppointments();
                 } else {
                     console.log('Adding error message:', response.message);
                     this.messageService.add({
@@ -181,7 +186,7 @@ export class RecentAppointmentsComponent implements OnInit {
                 this.messageService.add({
                     severity: 'error',
                     summary: 'Error',
-                    detail: 'Failed to reject appointment',
+                    detail: 'Failed to reject appointment. Please try again later.',
                     life: 3000
                 });
             }
