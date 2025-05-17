@@ -23,7 +23,6 @@ try {
 
     switch ($method) {
         case 'GET':
-            // Get all departments
             $query = "SELECT * FROM departments";
             $stmt = $conn->prepare($query);
             $stmt->execute();
@@ -36,13 +35,12 @@ try {
             break;
 
         case 'POST':
-            // Add new department
             if (!isset($data['dep_name']) || !isset($data['staff_num']) || !isset($data['beds_num']) || !isset($data['equipments'])) {
                 throw new Exception('All fields are required');
             }
 
             $query = "INSERT INTO departments (dep_name, staff_num, beds_num, equipments) 
-                      VALUES (:dep_name, :staff_num, :beds_num, :equipments)";
+                    VALUES (:dep_name, :staff_num, :beds_num, :equipments)";
             
             $stmt = $conn->prepare($query);
             $stmt->execute([
@@ -60,17 +58,16 @@ try {
             break;
 
         case 'PUT':
-            // Update department
             if (!isset($data['id']) || !isset($data['dep_name']) || !isset($data['staff_num']) || !isset($data['beds_num']) || !isset($data['equipments'])) {
                 throw new Exception('All fields are required');
             }
 
             $query = "UPDATE departments 
-                      SET dep_name = :dep_name, 
-                          staff_num = :staff_num, 
-                          beds_num = :beds_num, 
-                          equipments = :equipments 
-                      WHERE id = :id";
+            SET dep_name = :dep_name, 
+            staff_num = :staff_num, 
+            beds_num = :beds_num, 
+            equipments = :equipments 
+            WHERE id = :id";
             
             $stmt = $conn->prepare($query);
             $stmt->execute([
@@ -95,16 +92,13 @@ try {
             break;
 
         case 'DELETE':
-            // Get the ID from the URL query parameters
-            $id = isset($_GET['id']) ? $_GET['id'] : null;
-            
-            if (!$id) {
+            if (!isset($data['id'])) {
                 throw new Exception('Department ID is required');
             }
 
             $query = "DELETE FROM departments WHERE id = :id";
             $stmt = $conn->prepare($query);
-            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':id', $data['id']);
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
@@ -133,4 +127,4 @@ try {
         'message' => $e->getMessage()
     ]);
 }
-?> 
+?>

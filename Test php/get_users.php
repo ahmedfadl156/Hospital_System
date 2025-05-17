@@ -43,4 +43,4 @@ echo json_encode([
     'doctors' => $doctors,
     'appointments' => $appointments
 ]);
-?> 
+?>

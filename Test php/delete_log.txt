@@ -1,0 +1,32 @@
+2025-04-26 03:40:33: Raw input: {"id":{"ID":15,"name":"ات","specialty":"Pediatrics","email":"ات","yearsOfExperience":2}}
+2025-04-26 03:40:33: Decoded data: Array
+(
+    [id] => Array
+        (
+            [ID] => 15
+            [name] => ات
+            [specialty] => Pediatrics
+            [email] => ات
+            [yearsOfExperience] => 2
+        )
+
+)
+
+2025-04-26 03:40:33: Using ID: Array
+2025-04-26 03:40:33: Affected rows: 0
+2025-04-26 03:40:40: Raw input: {"id":{"ID":15,"name":"ات","specialty":"Pediatrics","email":"ات","yearsOfExperience":2}}
+2025-04-26 03:40:40: Decoded data: Array
+(
+    [id] => Array
+        (
+            [ID] => 15
+            [name] => ات
+            [specialty] => Pediatrics
+            [email] => ات
+            [yearsOfExperience] => 2
+        )
+
+)
+
+2025-04-26 03:40:40: Using ID: Array
+2025-04-26 03:40:40: Affected rows: 0
